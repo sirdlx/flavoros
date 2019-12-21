@@ -1,4 +1,4 @@
-import '../../components/Build/Page.dart';
+import '../../components/Build/BuildPage.dart';
 import '../components/DLX/components.dart';
 import '../components/Page/dashboard.dart';
 import 'package:flavor/utilities/AppSettings.dart';

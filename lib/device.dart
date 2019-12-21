@@ -1,5 +1,5 @@
 import 'package:flavor/utilities/AppSettings.dart';
-import 'package:flavor/components/Build/Page.dart';
+import 'package:flavor/components/Build/BuildPage.dart';
 import 'package:flavor/web/components/DLX/components.dart';
 import 'package:flavor/web/components/Page/Page.dart';
 import 'package:flavor/web/components/Page/splashpage.dart';
@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 
 FlavorApp({bool device = false, Map<String, WidgetBuilder> routes}) {
   return ChangeNotifierProvider<AppSettingsModel>(
-    builder: (context) =>
+    create: (context) =>
         AppSettingsModel(context, device: device, routes: routes),
     child: Consumer<AppSettingsModel>(
       builder: (_, settings, __) => FlavorMaterialApp(settings),

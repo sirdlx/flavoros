@@ -70,8 +70,8 @@ Future<Map<String, dynamic>> post(String path, dynamic body) async {
 //           - 0_reference
 //           - 1_reference
 
-List jsonToList(Map<String, dynamic> itemsJson, [String itemsSelector]) {
-  List temp = [];
+List<Map<String, dynamic>> jsonToList(Map<String, dynamic> itemsJson, [String itemsSelector]) {
+  List<Map<String, dynamic>>temp = [];
   // print('itemsSelector');
   // print(itemsSelector);
   if (itemsSelector != null) {

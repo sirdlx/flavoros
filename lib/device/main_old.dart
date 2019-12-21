@@ -14,7 +14,7 @@ class DLXApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AppModelJsonFB>(
-        builder: (_) => AppModelJsonFB(),
+        create: (_) => AppModelJsonFB(),
         child: Consumer<AppModelJsonFB>(builder: (context, app, child) {
           app.isLoading
               ? print('app is loading docs')

@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 void main() => runApp(
       ChangeNotifierProvider<AppSettingsModel>(
-        builder: (context) => AppSettingsModel(context),
+        create: (context) => AppSettingsModel(context),
         child: Consumer<AppSettingsModel>(
           builder: (_, settings, __) => AppShell(settings),
         ),

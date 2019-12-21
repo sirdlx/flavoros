@@ -15,7 +15,7 @@ class BuildAppFirestore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AppModelJsonFB>(
-        builder: (_) => AppModelJsonFB(firestoreLocation: this.firestorePath),
+        create: (_) => AppModelJsonFB(firestoreLocation: this.firestorePath),
         child: Consumer<AppModelJsonFB>(builder: (context, app, child) {
 
           print(app.isLoading);

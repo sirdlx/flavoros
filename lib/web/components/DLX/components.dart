@@ -199,7 +199,7 @@ class DLXCustomDialog extends StatefulWidget {
   /// Use that to show a BasicDialog from the given context.
   static Future showBasicDialog(BuildContext context, model) {
     return showDialog(
-        context: context, builder: (context) => DLXCustomDialog(model: model));
+        context: context, builder:  (context) => DLXCustomDialog(model: model));
   }
 
   @override

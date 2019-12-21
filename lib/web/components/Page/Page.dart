@@ -18,17 +18,19 @@ class PageShell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget component = safeArea
-        ? SafeArea(
-            child: child,
-          )
-        : child;
+    
+    Widget component = SafeArea(
+      top: this.safeArea,
+      maintainBottomViewPadding: true,
+      child: child,
+    );
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
         statusBarColor: statusbarColor != null ? statusbarColor : null,
       ),
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
           appBar: dialog == true
               ? AppBar(
                   backgroundColor: Colors.transparent,
@@ -64,17 +66,15 @@ class PageError extends StatelessWidget {
     return Scaffold(
         // backgroundColor: Theme.of(context).accentColor,
         backgroundColor: Colors.transparent,
-        body: SafeArea(
-      child: Center(
-        child: Container(
-          child: ErrorMessage(
-            errorCode: errorCode,
-            title: title,
-            msg: msg,
-            type: type,
+        body: Center(
+          child: Container(
+            child: ErrorMessage(
+              errorCode: errorCode,
+              title: title,
+              msg: msg,
+              type: type,
+            ),
           ),
-        ),
-      ),
-    ));
+        ));
   }
 }
